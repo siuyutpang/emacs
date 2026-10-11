@@ -1,0 +1,21 @@
+# Emacs byte-compiled and temporary files
+*.elc
+*~
+.#*
+#*#
+/auto-save-list/
+
+# Installed packages and generated runtime data
+/elpa/
+/eln-cache/
+/straight/
+/var/
+/recentf
+/places
+/bookmarks
+/history
+/transient/
+/url/
+
+# Local tutorial files
+/tutorial/
