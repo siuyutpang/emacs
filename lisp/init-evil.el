@@ -10,6 +10,11 @@
       evil-visual-state-cursor 'box)
 (evil-mode 1)
 
+;; TUI 中将 Evil 的 cursor-type 状态变化转发给终端模拟器。
+(unless (display-graphic-p)
+  (require 'evil-terminal-cursor-changer)
+  (etcc-on))
+
 (require 'evil-collection)
 (evil-collection-init)
 

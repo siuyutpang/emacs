@@ -8,7 +8,8 @@
 
 ;; 缺少包时只刷新一次列表，避免新机器上每安装一个包都刷新一次。
 (let ((missing (seq-filter (lambda (pkg) (not (package-installed-p pkg)))
-                           '(dracula-theme markdown-mode evil evil-collection))))
+                           '(dracula-theme markdown-mode evil evil-collection
+                             evil-terminal-cursor-changer))))
   (when missing
     (package-refresh-contents)
     (dolist (pkg missing)
