@@ -6,7 +6,8 @@
 (global-display-line-numbers-mode 1)
 
 ;; 光标接近窗口上下边缘时提前滚动，保留 5 行边距。
-(setq scroll-margin 5)
+(setq scroll-margin 5
+      scroll-conservatively 101)
 
 ;; 高亮 Markdown 围栏代码块。
 (setq markdown-fontify-code-blocks-natively t)
