@@ -5,6 +5,14 @@
       evil-want-keybinding nil
       evil-want-Y-yank-to-eol t)
 (require 'evil)
+(require 'select)
+
+;; 删除仍进入 kill-ring，显式复制照常同步系统剪贴板。
+(defun my-evil-delete-without-clipboard (orig-fn &rest args)
+  (let ((select-enable-clipboard nil))
+    (apply orig-fn args)))
+
+(advice-add 'evil-delete :around #'my-evil-delete-without-clipboard)
 
 (setq evil-normal-state-cursor 'box
       evil-insert-state-cursor '(bar . 2)
