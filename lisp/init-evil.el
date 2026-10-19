@@ -1,8 +1,9 @@
 ;;; init-evil.el -*- lexical-binding: t; -*-
 
-;; 这两个选项必须在加载 Evil 前设置。
+;; 这些选项必须在加载 Evil 前设置。
 (setq evil-undo-system 'undo-redo
-      evil-want-keybinding nil)
+      evil-want-keybinding nil
+      evil-want-Y-yank-to-eol t)
 (require 'evil)
 
 (setq evil-normal-state-cursor 'box
