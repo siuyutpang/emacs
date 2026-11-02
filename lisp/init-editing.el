@@ -12,8 +12,9 @@
 ;; 高亮 Markdown 围栏代码块。
 (setq markdown-fontify-code-blocks-natively t)
 
-;; 只在编程模式自动补括号，避免影响普通文本输入。
+;; 在编程模式和 Markdown 模式自动补括号。
 (add-hook 'prog-mode-hook #'electric-pair-local-mode)
+(add-hook 'markdown-mode-hook #'electric-pair-local-mode)
 
 ;; 关闭备份文件和自动保存文件；代价是无法用它们恢复旧版本或崩溃内容。
 (setq make-backup-files nil
