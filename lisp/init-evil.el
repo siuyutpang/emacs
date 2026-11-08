@@ -22,7 +22,9 @@
 ;; TUI 中将 Evil 的 cursor-type 状态变化转发给终端模拟器。
 (unless (display-graphic-p)
   (require 'evil-terminal-cursor-changer)
-  (etcc-on))
+  (if (fboundp 'evil-terminal-cursor-changer-activate)
+      (evil-terminal-cursor-changer-activate)
+    (etcc-on)))
 
 (require 'evil-collection)
 (evil-collection-init)
