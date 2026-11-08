@@ -12,6 +12,11 @@
 ;; 高亮 Markdown 围栏代码块。
 (setq markdown-fontify-code-blocks-natively t)
 
+;; 让 YAML 键名在当前主题下与普通文字区分开。
+(defun my-yaml-highlight-keys ()
+  (face-remap-add-relative 'font-lock-variable-name-face 'font-lock-keyword-face))
+(add-hook 'yaml-mode-hook #'my-yaml-highlight-keys)
+
 ;; 在编程模式和 Markdown 模式自动补括号。
 (add-hook 'prog-mode-hook #'electric-pair-local-mode)
 (add-hook 'markdown-mode-hook #'electric-pair-local-mode)
